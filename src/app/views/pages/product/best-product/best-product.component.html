@@ -1,0 +1,68 @@
+<!--Section: Products v.2-->
+<section class="section pb-3" class="section-bg">
+  <div class="row nowrap">
+    <mat-toolbar>
+      <button mat-flat-button class="btn btn-primary-panel" [routerLink]="['/']" [routerLinkActiveOptions]="{exact: true}"
+        routerLinkActive="active-link-panel">
+        <span>All</span>
+      </button>
+      <button mat-flat-button class="btn btn-primary-panel" [routerLink]="['/products/all-products']" routerLinkActive="active-link-panel">
+        <span>Electronic</span>
+      </button>
+      <button mat-flat-button class="btn btn-primary-panel" [routerLink]="['/task-board/tasks']" routerLinkActive="active-link-panel">
+        <span>Small application</span>
+      </button>
+      <button mat-flat-button class="btn btn-primary-panel" [routerLink]="['/products/favourite-products']" routerLinkActive="active-link-panel">
+        <span>Fashion access</span>
+      </button>
+    </mat-toolbar>
+  </div>
+  <div class="line-between"></div>
+  <div class="row row-cols-2" style="padding: 4% 5% 4% 5%;">
+    <mat-card *ngFor="let product of bestProducts" class="card card-cascade wider col">
+      <mat-card-title>
+        <div class="card-title-ref">
+          <span style="margin: 8%;">Points 1200</span>
+          <a [routerLink]="['/products/product', product.$key]">
+            <div>
+              <img [src]="product.productImageUrl" class="img-fluid image-align-center" alt="" width="50%" height="50%"
+                style="padding-top: 8%;" />
+              <a>
+                <div class="mask waves-effect waves-light" mdbRippleRadius></div>
+              </a>
+            </div>
+          </a>
+          <button class="btn btn-primary-cus btn-addtocard" (click)="addToCart(product)">
+            Add to Cart <i class="fa fa-plus-square-o" aria-hidden="true"
+              style="font-size:x-large; right: -20px;top: 5px;"></i>
+          </button>
+        </div>
+      </mat-card-title>
+      <mat-card-content class="card-body content-body-cus">
+        <!--Category & Title-->
+        <!-- <a href="" class="text-muted">
+          <h5>{{ product.productCategory }}</h5>
+        </a> -->
+        <h5 class="card-title" style="padding-top: 8%;">
+          <strong>
+            {{ product.productName }}
+          </strong>
+        </h5>
+
+        <!--Description-->
+        <p class="card-text">{{ product.productDescription }}</p>
+
+        <!--Card footer-->
+        <!-- <div class="card-footer">
+          <span class="left">$ {{ product.productPrice }}</span>
+          <span class="right">
+            <a placement="top" mdbTooltip="Add to Wishlist" container="body">
+              <i class="fa fa-heart"></i>
+            </a>
+          </span>
+        </div> -->
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>
+<!--Section: Products v.2-->

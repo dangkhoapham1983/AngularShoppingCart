@@ -1,0 +1,26 @@
+<!--Footer-->
+<footer class="page-footer center-on-small-only mt-3">
+  <mat-toolbar class="toolbarNav">
+    <button mat-flat-button [routerLink]="['/']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active-link">
+      <div class="curved-corner-bottomleft" style="width: 0; height: 100%; float: left; background: #5E478B; left: 0;">&nbsp;</div>
+      <div class="curved-corner-bottomright" style="width: 0; height: 100%; float: right; background: #5E478B; right: 0;">&nbsp;</div>
+      <div style="width: 100%; background: #5E478B; position: fixed;bottom: 0; left:0; height: 3%;">&nbsp;</div>
+      <mat-icon class="material-icons location_icon">
+        star_border</mat-icon>
+    </button>
+    <button mat-flat-button [routerLink]="['/products/all-products']" routerLinkActive="active-link">
+      <mat-icon class="material-icons location_icon">diamond
+      </mat-icon>
+    </button>
+    <button mat-flat-button [routerLink]="['/task-board/tasks']" routerLinkActive="active-link">
+      <mat-icon class="material-icons location_icon">games</mat-icon>
+    </button>
+    <button mat-flat-button [routerLink]="['/products/favourite-products']" routerLinkActive="active-link">
+      <mat-icon class="material-icons location_icon">shop</mat-icon>
+    </button>
+    <button mat-flat-button [routerLink]="['/products/cart-items']" routerLinkActive="active-link">
+      <mat-icon class="material-icons location_icon">person</mat-icon>
+    </button>
+  </mat-toolbar>
+</footer>
+<!--/.Footer-->

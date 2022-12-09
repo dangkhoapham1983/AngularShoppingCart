@@ -1,0 +1,74 @@
+<!-- Carousel -->
+<div class="container">
+  <div class="row row-cols-2" style="color: white; padding: 4% 5% 0% 5%;">
+    <div class="col" style="border-radius: 18px; background-image: linear-gradient(to right, #322d8c, #272577, #1c1c63, #131550, #0a0c3d);">
+      <div class="row float-left">
+        <img style="border-radius: 50%; width: 38px; margin-right: 25px;box-shadow: 2px 2px 12px 2px #ccc;" src="./assets/userprofile.jpg">
+        <div class="profile-first-1">Lvl. 7</div>
+        <div class="profile-first-2">10,000 Points</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="float-right">
+        <i class="fa fa-clock-o" style="font-size: 35px;" aria-hidden="true"></i>
+        <i class="fa fa-trash" style="margin-left: 25px; font-size: 35px;" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+  <!--Carousel Wrapper-->
+  <div id="carousel-example-2" class="carousel slide carousel-fade carousel-cus" data-ride="carousel">
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li
+        data-target="#carousel-example-2"
+        data-slide-to="0"
+        class="active"
+      ></li>
+      <li data-target="#carousel-example-2" data-slide-to="1"></li>
+      <li data-target="#carousel-example-2" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+      <div *ngFor="let carouselItem of carouselList; let i = index"
+        class="carousel-item {{ i === 0 ? 'active' : '' }}">
+        <div class="view border-card-inner">
+          <img
+            class="d-block w-100"
+            [src]="carouselItem.bannerImg"
+            alt="First slide"
+          />
+          <div class="mask rgba-black-light"></div>
+        </div>
+        <div class="carousel-caption carousel-caption-cus">
+          <!-- <h3 class="h3-responsive">{{ carouselItem.title }}</h3>
+          <p>{{ carouselItem.description }}</p> -->
+        </div>
+      </div>
+    </div>
+    <!--/.Slides-->
+    <!--Controls-->
+    <a
+      class="carousel-control-prev"
+      href="#carousel-example-2"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carousel-example-2"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    <!--/.Controls-->
+  </div>
+  <!--/.Carousel Wrapper-->
+  <br />
+  <app-best-product></app-best-product>
+</div>
